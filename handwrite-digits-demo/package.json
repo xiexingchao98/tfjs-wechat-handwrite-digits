@@ -1,0 +1,17 @@
+{
+  "name": "tensorflow-handwrite-digits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@tensorflow/tfjs-core": "1.2.9",
+    "@tensorflow/tfjs-layers": "1.2.9",
+    "fetch-wechat": "0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
