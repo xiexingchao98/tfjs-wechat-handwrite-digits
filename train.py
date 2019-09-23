@@ -1,5 +1,12 @@
 from tensorflow import keras
+import tensorflow as tf
 import tensorflowjs as tfjs
+
+checkpoint_dir = 'checkpoint'
+checkpoint_path = checkpoint_dir + '/cp.ckpt'
+checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(checkpoint_path, save_weights_only=True, verbose=1)
+
+latest_checkpoint = tf.train.latest_checkpoint(checkpoint_dir)
 
 mnist = keras.datasets.mnist
 
@@ -37,7 +44,13 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(train_images, train_labels, epochs=1)
+if latest_checkpoint is not None:
+    model.load_weights(latest_checkpoint)
+    print('>>> restore checkpoint <<<')
+    model.evaluate(test_images, test_labels)
+
+print('>>> train start <<<')
+model.fit(train_images, train_labels, epochs=500, callbacks=[checkpoint_callback])
 
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
