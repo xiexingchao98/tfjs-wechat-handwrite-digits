@@ -16,7 +16,7 @@ Page({
   },
   async onLoad() {
     // 加载模型
-    model =  await tfl.loadLayersModel('https://xiexingchao.ink/tfjs/model/model.json')
+    model =  await tfl.loadLayersModel('https://raw.githubusercontent.com/xiexingchao98/tfjs-wechat-handwrite-digits/master/model/model.json')
     console.log('model loaded')
     // 显示模型摘要
     model.summary()
