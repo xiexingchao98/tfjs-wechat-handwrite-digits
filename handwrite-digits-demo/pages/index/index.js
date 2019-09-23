@@ -61,7 +61,8 @@ Page({
         that.setData({ tempFilePath: res.tempFilePath })
         wx.uploadFile({
           // 本地测试地址
-          url: 'http://localhost:5000/format_image',
+          // url: 'http://localhost:5000/format_image',
+          url: 'https://xiexingchao.ink/tfjs-wechat-handwrite-digits/api/format_image',
           filePath: res.tempFilePath,
           name: 'image',
           success: (res) => {

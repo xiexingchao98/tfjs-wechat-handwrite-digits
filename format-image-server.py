@@ -35,6 +35,6 @@ def format_image():
     # tmp.save(image_new_path)
 
     # 返回字符串形式的图片数据列表
-    resp = str(np.reshape(np.invert(np.array(tmp)), (28, 28, 1)).tolist())
+    resp = str(np.reshape(np.invert(np.array(tmp)), (28, 28)).tolist())
 
     return resp
