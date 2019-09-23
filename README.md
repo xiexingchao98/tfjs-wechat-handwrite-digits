@@ -1,6 +1,8 @@
 # tfjs-wechat-handwrite-digits
 
-基于 Tensorflowjs 的微信小程序手写数字识别 Demo
+基于 Tensorflowjs 的微信小程序手写数字识别 Demo 。
+
+> 仅供实训项目答辩使用（划水）
 
 ## 状况
 
@@ -29,6 +31,13 @@ flask run
 npm i
 微信开发者工具 -> 工具 -> 构建 npm
 ```
+
+## 待办事项
+
++ [ ] 模型训练（项目改进）
++ [ ] 项目介绍PPT
++ [ ] 设计文档
++ [ ] 需求说明文档
 
 ## 参阅
 
