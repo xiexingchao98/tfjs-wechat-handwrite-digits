@@ -18,6 +18,8 @@ Page({
     // 加载模型
     model =  await tfl.loadLayersModel('https://xiexingchao.ink/tfjs/model/model.json')
     console.log('model loaded')
+    // 显示模型摘要
+    model.summary()
   },
   /*
    * 画布功能区域

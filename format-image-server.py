@@ -16,6 +16,9 @@ def format_image():
     # 获取请求中的图片
     f = request.files['image']
 
+    # Debug
+    # suffix = f.filename[f.filename.rindex('.'):]
+
     # 使用 PIL 的 Image 进行处理
     img = Image.open(f)
 
@@ -32,6 +35,6 @@ def format_image():
     # tmp.save(image_new_path)
 
     # 返回字符串形式的图片数据列表
-    resp = str(np.array(tmp).tolist())
+    resp = str(np.reshape(np.invert(np.array(tmp)), (28, 28, 1)).tolist())
 
     return resp
