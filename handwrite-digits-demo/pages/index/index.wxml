@@ -1,13 +1,13 @@
 <canvas canvas-id="canvas" style='width: 400rpx; height: 400rpx; margin: 0 auto; border: 1px solid rgba(0,0,0,.58)' bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"/>
 <view style="display: flex; margin: 40rpx 0;">
-  <button type="primary" size="mini" bindtap='guess'>Guess</button>
-  <button size="mini" bindtap='clearCanvas'>Clear</button>
+  <button type="primary" bindtap='guess'>Guess</button>
+  <button bindtap='clearCanvas'>Clear</button>
 </view>
-<view >
-  <text>Prediction:</text>
-  <text>{{ prediction }}</text>
+<view style="padding: 24rpx 48rpx;">
+  <text style="font-size: 14pt;">Prediction:</text>
+  <text style="font-size: 18pt; margin-left: 24rpx;">{{ prediction }}</text>
 </view>
-<view >
+<!-- <view >
   <text>Output image</text>
   <image src='{{ tempFilePath }}' />
-</view>
+</view> -->

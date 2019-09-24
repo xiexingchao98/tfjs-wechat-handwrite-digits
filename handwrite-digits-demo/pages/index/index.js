@@ -13,6 +13,7 @@ ctx.save()
 Page({
   data: {
     tempFilePath: '',
+    prediction: ''
   },
   async onLoad() {
     // 加载模型
@@ -58,7 +59,7 @@ Page({
       destHeight: 200,
       quality: 1,
       success: (res) => {
-        that.setData({ tempFilePath: res.tempFilePath })
+        // that.setData({ tempFilePath: res.tempFilePath })
         wx.uploadFile({
           // 本地测试地址
           // url: 'http://localhost:5000/format_image',
@@ -69,11 +70,10 @@ Page({
             let tensor = tf.tensor2d(JSON.parse(res.data))
             tensor.print()
             // 使用模型进行预测
-            let prediction = model.predict(tensor.expandDims(0))
-            // 显示预测结果集
-            prediction.print()
-            // 显示实际预测结果
-            prediction.argMax(1).print()
+            let prediction = model.predict(tensor.expandDims(0)).argMax(1).arraySync()[0]
+            // 显示预测结果
+            console.log(prediction)
+            that.setData({ prediction: prediction })
           }
         })
       },
